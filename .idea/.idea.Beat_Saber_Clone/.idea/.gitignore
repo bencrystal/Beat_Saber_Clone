@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/.idea.Beat_Saber_Clone.iml
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Games\Unity\Beat_Saber_Clone\Beat_Saber_Clone\.idea\.idea.Beat_Saber_Clone\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
