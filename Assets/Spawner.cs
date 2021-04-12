@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] cubes;
     public Transform[] points; //points where cubes are instantiated
-    public float tempo = (60/105)*2;
+    public float tempo = 127; //(60/105)*2;
     
     private float _timer; //time between 2 beats or spawns of the cube
 
@@ -15,7 +15,8 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        //note frequency
+        tempo = 60 / tempo;
     }
 
     // Update is called once per frame
