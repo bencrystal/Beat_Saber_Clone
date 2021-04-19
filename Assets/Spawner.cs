@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Beat;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -11,12 +12,25 @@ public class Spawner : MonoBehaviour
     
     private float _timer; //time between 2 beats or spawns of the cube
 
+    public AudioSource cameraAudioSource;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         //note frequency
-        tempo = 60 / tempo;
+        
+        //set spawn rate to tempo bpm
+        //tempo = 60 / tempo;
+        
+        //initialize new clock at tempo bpm (should I set equal to a variable?
+        //Clock.Instance.SetBPM(tempo);
+        //cameraAudioSource.PlayScheduled(Clock(AtNextThirtySecond()));
+        //Clock.
+       // Clock.BeatArgs(AtNextThirtySecond());
+        //    Clock(AtNextThirtySecond())
+       // cameraAudioSource.PlayScheduled(Clock.BeatEvent(AtNextThirtySecond()));
+
     }
 
     // Update is called once per frame

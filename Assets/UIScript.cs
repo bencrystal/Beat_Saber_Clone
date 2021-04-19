@@ -10,6 +10,7 @@ public class UIScript : MonoBehaviour
     public static int combo = 0;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI comboText;
+    public TextMeshProUGUI accuracyText; //whether the last hit was good, great, perfect, or a miss
 
     // Start is called before the first frame update
     void Start()

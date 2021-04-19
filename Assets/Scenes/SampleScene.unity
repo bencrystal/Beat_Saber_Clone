@@ -1012,7 +1012,8 @@ MonoBehaviour:
   - {fileID: 1293079327}
   - {fileID: 451090299}
   - {fileID: 779463193}
-  tempo: 63.5
+  tempo: 1
+  cameraAudioSource: {fileID: 963194230}
 --- !u!1 &538478654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1835,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f8e96e81f2f59c04881c49c4b556e737, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
