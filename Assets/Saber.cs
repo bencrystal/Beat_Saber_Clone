@@ -32,12 +32,13 @@ public class Saber : MonoBehaviour
                 foreach (Transform child in transform) 
                 {
                     child.parent = null;
-                    DestroyImmediate(child.gameObject);
+                    //DestroyImmediate(child.gameObject);
                     
-                    //GameObject.Destroy(child.gameObject);
+                    GameObject.Destroy(child.gameObject);
                     
                 }
                 Destroy(hit.transform.parent.gameObject);
+                //Destroy(transform.parent.gameObject);
                 //hit.transform.GetComponent<on>()
                 
                 //increment score

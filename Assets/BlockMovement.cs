@@ -20,6 +20,7 @@ public class BlockMovement : MonoBehaviour
     {
         transform.position += -transform.forward * (speed * Time.deltaTime)  ;
 
+        //once block is not destroyed and is behind player, reset combo
         if (transform.position.z < -1 )//&& gameObject != null) 
         {
             
