@@ -16,7 +16,7 @@ public class BlockMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         transform.position += -transform.forward * (speed * Time.deltaTime)  ;
 
@@ -26,11 +26,12 @@ public class BlockMovement : MonoBehaviour
             
             foreach (Transform child in transform) 
             {
-                child.parent = null;
                 GameObject.Destroy(child.gameObject);
+                child.parent = null;
+                //GameObject.Destroy(child.gameObject);
                 
             }
-            Destroy(transform.parent.gameObject);
+            //Destroy(transform.parent.gameObject);
             Destroy(transform.gameObject);
 
             //end combo
