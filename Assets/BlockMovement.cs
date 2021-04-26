@@ -21,22 +21,23 @@ public class BlockMovement : MonoBehaviour
         transform.position += -transform.forward * (speed * Time.deltaTime)  ;
 
         //once block is not destroyed and is behind player, reset combo
-        if (transform.position.z < -1) // && transform != null) //gameObject != null) 
+        if (transform.position.z < 0) // && transform != null) //gameObject != null) 
         {
             
             foreach (Transform child in transform) 
             {
                 GameObject.Destroy(child.gameObject);
-                child.parent = null;
+                //child.parent = null;
                 //GameObject.Destroy(child.gameObject);
                 
             }
             //Destroy(transform.parent.gameObject);
             Destroy(transform.gameObject);
 
-            //end combo
-            UIScript.combo = 0;
-            
+            //end combo and state last note was a "miss"
+            UIScript.Instance.combo = 0;
+            UIScript.Instance.lastNoteHit = 4;
+
             /*
             if (wasHit == false)
             {
