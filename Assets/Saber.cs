@@ -13,12 +13,12 @@ public class Saber : MonoBehaviour
     private int _pointMultiplier = 100;
     
     //the thresholds for note quality in ms
-    private double _perfectTolerance = .05;
-    private double _goodTolerance = .150;
+    private double _perfectTolerance = .05; // = UIScript.Instance.score;
+    private double _goodTolerance = .150;   // = UIScript.Instance.combo;
     private double _perfectLowThreshold;    // = _perfectTolerance;
-    private double _perfectHighThreshold;   // = Spawner.Instance.tempo - .100;
+    private double _perfectHighThreshold;   // = Spawner.Instance.tempo - _perfectTolerance;
     private double _goodLowThreshold;       // = _goodTolerance;
-    private double _goodHighThreshold;      // = Spawner.Instance.tempo - .150;
+    private double _goodHighThreshold;      // = Spawner.Instance.tempo - _goodTolerance;
     
     public ParticleSystem explosion;// = this.gameObject.GetComponent<ParticleSystem>();
 
@@ -44,8 +44,12 @@ public class Saber : MonoBehaviour
             {
                 //CHECK FOR TIME THE PLAYER IS HITTING THE NOTE
                 
+                //varies based on timing
+                
                 //tracks time hit for accuracy
                 //double hitTime = AudioSettings.dspTime;
+                
+                //CHECK FOR TIME THE PLAYER IS HITTING THE NOTE
                 _timeHit = Spawner.Instance.timer;
                 
                 //play particle effect

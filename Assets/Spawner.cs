@@ -8,16 +8,19 @@ using UnityEngine;
 public class Spawner : Singleton<Spawner>
 {
 
-    public Clock clock;
+    //public Clock clock;
 
     public GameObject orientationCube;
     public GameObject[] cubes;
     public Transform[] points;  //points where cubes are instantiated
-    public double tempo = 127;  //(60/105)*2;
-    public double offset = 0;   //offset on the timer to make spawns line up with the beat of the song
+    //tempo of the song being played that the notes spawn to
+    public double tempo = 127;  
+    //offset on the timer to make spawns line up with the beat of the song
+    public double offset = 0;   
     private double _spawnRate;
 
-    public double timer { get; private set; } //time between 2 beats or spawns of the cube
+    //time tracker between 2 beats or spawns of the cube
+    public double timer { get; private set; } 
     
     public AudioSource cameraAudioSource;
 
@@ -92,21 +95,15 @@ public class Spawner : Singleton<Spawner>
             twoAgo = oneAgo;
             oneAgo = spawnPoint;
             
+            //create a cube of red or blue randomly at one of the predefined locations
             GameObject cube = Instantiate(cubes[Random.Range(0, 2)], points[spawnPoint]);
             cube.transform.localPosition = Vector3.zero;
-            cube.transform.Rotate(transform.forward, 45 * Random.Range(0,8)); //random 1 of 8 cardinal directions
+            //randomly facing 1 of 8 directions
+            cube.transform.Rotate(transform.forward, 45 * Random.Range(0,8)); 
+            //decrease the timer by the spawn rate threshold (reset)
             timer -= _spawnRate;
         }
-        
-        //if (timer + offset > )
-        
-        /*
-        else
-        {
-            timer += Time.deltaTime;
-        }
-        */
-        
+        //increment the timer by the time since the last frame
         timer += Time.deltaTime;
 
         
